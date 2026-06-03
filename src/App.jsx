@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import TodoList from './components/TodoList'
+import { formatCount } from './utils/helpers'
 import './App.css'
 
 function App() {
@@ -26,8 +28,9 @@ function App() {
           className="counter"
           onClick={() => setCount((count) => count + 1)}
         >
-          Count is {count}
+          Count is {formatCount(count)}
         </button>
+        <TodoList />
       </section>
 
       <div className="ticks"></div>
